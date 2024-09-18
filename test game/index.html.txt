@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Based Adventure Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #game { margin: 20px; }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h1>Text-Based Adventure Game</h1>
+        <p id="description">You find yourself in a dark forest. Do you want to go left or right?</p>
+        <input type="text" id="input" placeholder="Type your choice here">
+        <button onclick="makeChoice()">Submit</button>
+        <div id="output"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

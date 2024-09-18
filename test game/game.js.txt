@@ -1,0 +1,57 @@
+const descriptionElement = document.getElementById('description');
+const outputElement = document.getElementById('output');
+const inputElement = document.getElementById('input');
+
+function makeChoice() {
+    const choice = inputElement.value.toLowerCase();
+    inputElement.value = '';
+
+    if (descriptionElement.textContent.includes("dark forest")) {
+        if (choice === 'left') {
+            leftPath();
+        } else if (choice === 'right') {
+            rightPath();
+        } else {
+            outputElement.textContent = "Invalid choice. Please choose 'left' or 'right'.";
+        }
+    } else if (descriptionElement.textContent.includes("mysterious cave")) {
+        if (choice === 'enter') {
+            cave();
+        } else if (choice === 'walk') {
+            outputElement.textContent = "You walk past the cave and find a peaceful clearing. You win!";
+        } else {
+            outputElement.textContent = "Invalid choice. Please choose 'enter' or 'walk'.";
+        }
+    } else if (descriptionElement.textContent.includes("sleeping dragon")) {
+        if (choice === 'sneak') {
+            outputElement.textContent = "You successfully sneak past the dragon and find a treasure chest. You win!";
+        } else if (choice === 'fight') {
+            outputElement.textContent = "You bravely fight the dragon but get defeated. Game Over.";
+        } else {
+            outputElement.textContent = "Invalid choice. Please choose 'sneak' or 'fight'.";
+        }
+    } else if (descriptionElement.textContent.includes("treasure chest")) {
+        if (choice === 'open') {
+            outputElement.textContent = "The chest is full of gold and jewels. You win!";
+        } else if (choice === 'leave') {
+            outputElement.textContent = "You leave the cave and find your way out of the forest. You win!";
+        } else {
+            outputElement.textContent = "Invalid choice. Please choose 'open' or 'leave'.";
+        }
+    }
+}
+
+function leftPath() {
+    descriptionElement.textContent = "You have taken the left path and come across a mysterious cave. Do you want to enter the cave or walk past it?";
+    outputElement.textContent = '';
+}
+
+function rightPath() {
+    descriptionElement.textContent = "You have taken the right path and stumble upon a sleeping dragon. Do you want to sneak past the dragon or fight it?";
+    outputElement.textContent = '';
+}
+
+function cave() {
+    descriptionElement.textContent = "You enter the cave and find a treasure chest. Do you want to open the chest or leave it?";
+    outputElement.textContent = '';
+}
